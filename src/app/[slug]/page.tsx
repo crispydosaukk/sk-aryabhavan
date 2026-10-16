@@ -8,6 +8,30 @@ import { SITE_URL } from '@/lib/seoService';
 import { getSiteContent } from '@/lib/firebaseService';
 import { Utensils, Award, Sparkles, MapPin, Phone, ArrowRight, CheckCircle2, ChevronRight, ShieldCheck } from 'lucide-react';
 
+const DEDICATED_ROUTES = new Set([
+  'about-us',
+  'admin',
+  'api',
+  'barkingside',
+  'belgium',
+  'branches',
+  'central-london',
+  'contact-us',
+  'cookie-policy-uk',
+  'eastham',
+  'franchise',
+  'ilford',
+  'live-dosa-catering',
+  'menu',
+  'outdoor-catering',
+  'privacy-policy',
+  'terms-and-disclaimer',
+  'tooting',
+  'wembley',
+  'home',
+  ''
+]);
+
 interface Props {
   params: Promise<{ slug: string }>;
 }
@@ -21,7 +45,10 @@ export async function generateStaticParams() {
     try {
       const files = fs.readdirSync(extractedDir);
       files.forEach((f) => {
-        if (f.endsWith('.json')) routes.add(f.replace('.json', ''));
+        if (f.endsWith('.json')) {
+          const s = f.replace('.json', '');
+          if (!DEDICATED_ROUTES.has(s)) routes.add(s);
+        }
       });
     } catch {}
   }
@@ -32,7 +59,9 @@ export async function generateStaticParams() {
     if (siteContent?.pagesSeo) {
       Object.keys(siteContent.pagesSeo).forEach((r) => {
         const clean = r.replace(/^\//, '');
-        if (clean && !clean.includes('/')) routes.add(clean);
+        if (clean && !clean.includes('/') && !DEDICATED_ROUTES.has(clean)) {
+          routes.add(clean);
+        }
       });
     }
   } catch {}
@@ -42,6 +71,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
+  if (DEDICATED_ROUTES.has(slug)) return {};
   const siteContent = await getSiteContent();
   const routeKey = `/${slug}`;
   const seoConfig = siteContent?.pagesSeo?.[routeKey];
@@ -110,6 +140,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function DynamicSlugPage({ params }: Props) {
   const { slug } = await params;
+  if (DEDICATED_ROUTES.has(slug)) {
+    notFound();
+  }
+
   const siteContent = await getSiteContent();
   const routeKey = `/${slug}`;
   const seoConfig = siteContent?.pagesSeo?.[routeKey];
