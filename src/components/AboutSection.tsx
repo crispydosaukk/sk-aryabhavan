@@ -25,13 +25,13 @@ export default function AboutSection({ aboutData }: AboutSectionProps) {
     <section id="about" className="bg-white overflow-hidden w-full">
       <div className="grid w-full grid-cols-1 items-stretch lg:grid-cols-2">
         
-        {/* Left image column: seamless dark grey background displaying complete image without cropping */}
-        <div className="relative h-[380px] w-full min-h-[313px] overflow-hidden bg-[#1d1916] sm:h-[480px] lg:h-[620px] lg:min-h-0 flex items-center justify-center p-2 sm:p-4 lg:p-6">
+        {/* Left image column: complete seamless dark grey background displaying thali without clipping */}
+        <div className="relative h-[380px] w-full min-h-[313px] overflow-hidden bg-[#1d1916] sm:h-[480px] lg:h-[620px] lg:min-h-0">
           <Image
-            src={image}
+            src="/images/migrated/thali-seamless-grey.jpg"
             alt={title}
             fill
-            className="object-contain object-center"
+            className="object-cover object-center"
             priority
             quality={95}
             sizes="(max-width: 1024px) 100vw, 50vw"
