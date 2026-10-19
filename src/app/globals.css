@@ -225,3 +225,10 @@ main {
 img {
   transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease-out;
 }
+
+/* Footer logo: no background introduced by browser during transitions */
+.footer-logo-img {
+  mix-blend-mode: multiply;
+  background: transparent !important;
+  transition: opacity 0.2s ease !important;
+}

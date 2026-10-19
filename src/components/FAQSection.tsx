@@ -6,7 +6,7 @@ import { HelpCircle, ChevronDown, Phone } from 'lucide-react';
 import siteContent from '@/data/site_content.json';
 
 export default function FAQSection() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggle = (idx: number) => {
     setOpenIndex(openIndex === idx ? null : idx);

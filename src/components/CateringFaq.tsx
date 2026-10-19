@@ -22,7 +22,7 @@ export default function CateringFaq({
   sideImageSrc,
   sideImageAlt = 'Arya Bhavan Catering FAQ',
 }: Props) {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggle = (idx: number) => {
     setOpenIndex(openIndex === idx ? null : idx);

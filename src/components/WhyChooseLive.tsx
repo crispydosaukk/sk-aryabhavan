@@ -63,7 +63,7 @@ export default function WhyChooseLive({ whyData }: WhyChooseLiveProps) {
   const activeReasons = whyData && whyData.length > 0 ? whyData : reasons;
   return (
     <section className="bg-[#344B42] py-[50px] text-white">
-      <div className="mx-auto max-w-[1240px] px-4 sm:px-6">
+      <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
         <div className="mb-5 text-center">

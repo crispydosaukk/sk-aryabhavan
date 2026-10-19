@@ -60,7 +60,7 @@ interface FaqSectionLiveProps {
 
 export default function FaqSectionLive({ faqs: propFaqs }: FaqSectionLiveProps) {
   const activeFaqs = propFaqs && propFaqs.length > 0 ? propFaqs : faqs;
-  const [openIdx, setOpenIdx] = useState<number | null>(0);
+  const [openIdx, setOpenIdx] = useState<number | null>(null);
   const [activeSlide, setActiveSlide] = useState<number>(0);
   const [isPaused, setIsPaused] = useState<boolean>(false);
   const slideCount = carouselImages.length;
@@ -89,7 +89,7 @@ export default function FaqSectionLive({ faqs: propFaqs }: FaqSectionLiveProps) 
 
   return (
     <section className="py-10 sm:py-[50px] bg-white">
-      <div className="max-w-[1240px] mx-auto px-4 sm:px-6">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
         <div className="text-center mb-8 sm:mb-12">
@@ -189,7 +189,7 @@ export default function FaqSectionLive({ faqs: propFaqs }: FaqSectionLiveProps) 
                       </span>
 
                       {/* Question Text */}
-                      <span className="font-['Josefin_Sans',sans-serif] font-bold text-[16px] sm:text-[18px] text-[#202020] leading-snug">
+                      <span className="font-['Josefin_Sans',sans-serif] font-bold text-[18px] sm:text-[20px] text-[#202020] leading-snug">
                         {faq.q}
                       </span>
                     </button>

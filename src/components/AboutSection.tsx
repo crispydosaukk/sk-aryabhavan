@@ -25,21 +25,21 @@ export default function AboutSection({ aboutData }: AboutSectionProps) {
     <section id="about" className="bg-white overflow-hidden w-full">
       <div className="grid w-full grid-cols-1 items-stretch lg:grid-cols-2">
         
-        {/* Left image column: full-bleed cover flush to the left screen edge, matching live site */}
-        <div className="relative h-[380px] w-full min-h-[313px] overflow-hidden bg-[#201c1a] sm:h-[480px] lg:h-[620px] lg:min-h-0">
+        {/* Left image column: seamless dark grey background displaying complete image without cropping */}
+        <div className="relative h-[380px] w-full min-h-[313px] overflow-hidden bg-[#1d1916] sm:h-[480px] lg:h-[620px] lg:min-h-0 flex items-center justify-center p-2 sm:p-4 lg:p-6">
           <Image
             src={image}
             alt={title}
             fill
-            className="object-cover object-center"
+            className="object-contain object-center"
             priority
-            quality={90}
+            quality={95}
             sizes="(max-width: 1024px) 100vw, 50vw"
           />
         </div>
 
         {/* Right text column matching live site padding and typography */}
-        <div className="flex w-full flex-col justify-center px-5 py-8 sm:py-12 lg:py-[50px] lg:pl-10 lg:pr-[30px]">
+        <div className="flex w-full flex-col justify-center px-4 sm:px-6 lg:px-0 py-8 sm:py-12 lg:py-[50px] lg:pl-4 lg:pr-[30px]">
           <h2 className="font-ivymode mb-5 text-[26px] font-semibold uppercase leading-[1.25] tracking-[1px] text-[#344E41] sm:text-[28px] lg:text-[32px] lg:leading-[56px] pt-2 lg:pt-[1em]">
             {title}
           </h2>

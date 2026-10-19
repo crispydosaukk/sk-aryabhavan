@@ -29,7 +29,7 @@ const locations = [
 export default function UKLocations() {
   return (
     <section className="py-10 sm:py-[50px] bg-[#ECE6DF]">
-      <div className="max-w-[1240px] mx-auto px-4 sm:px-6">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
         <div className="text-center mb-8 sm:mb-12">
