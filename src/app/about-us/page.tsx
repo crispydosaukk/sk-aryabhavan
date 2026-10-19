@@ -66,7 +66,7 @@ export default async function AboutUsPage() {
       <section className="w-full bg-white overflow-hidden">
         <div className="grid w-full grid-cols-1 items-stretch lg:grid-cols-2">
           {/* Left Column: South Indian Thali Feast Image flush to left edge */}
-          <div className="relative min-h-[313px] h-[380px] sm:h-[480px] lg:h-[620px] w-full">
+          <div className="relative min-h-[313px] w-full">
             <Image
               src="/images/migrated/WhatsApp-Image-2025-12-09-at-17.36.52-11.jpeg"
               alt="South Indian Traditional Vegetarian Thali Feast"
@@ -78,7 +78,7 @@ export default async function AboutUsPage() {
           </div>
 
           {/* Right column: heading narrative and 4 feature badges */}
-          <div className="flex flex-col justify-center px-5 sm:px-8 lg:px-10 py-8 sm:py-12 lg:py-[50px] lg:pl-10 lg:pr-[30px]">
+          <div className="flex flex-col justify-center px-5 sm:px-8 lg:pl-10 lg:pr-[30px] pt-[50px] pb-[50px]">
             <h2 className="font-ivymode mb-5 text-[26px] font-semibold uppercase leading-[1.25] tracking-[1px] text-[#344E41] sm:text-[28px] lg:text-[32px] lg:leading-[56px] pt-2 lg:pt-[1em]">
               LET’S CREATE MEMORIES THAT WILL LAST A LIFETIME.
             </h2>
