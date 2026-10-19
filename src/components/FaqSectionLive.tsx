@@ -184,12 +184,12 @@ export default function FaqSectionLive({ faqs: propFaqs }: FaqSectionLiveProps) 
                       aria-expanded={isOpen}
                     >
                       {/* Plus / Minus Indicator Icon on Left */}
-                      <span className="text-[18px] sm:text-[20px] font-bold text-[#202020] shrink-0 leading-none select-none w-4 text-center">
+                      <span className="text-[18px] font-bold text-[#202020] shrink-0 leading-none select-none w-4 text-center">
                         {isOpen ? '−' : '+'}
                       </span>
 
                       {/* Question Text */}
-                      <span className="font-['Josefin_Sans',sans-serif] font-bold text-[18px] sm:text-[20px] text-[#202020] leading-snug">
+                      <span className="font-['Josefin_Sans',sans-serif] font-bold text-[18px] text-[#202020] leading-snug">
                         {faq.q}
                       </span>
                     </button>
