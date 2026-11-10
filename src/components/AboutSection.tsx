@@ -25,8 +25,8 @@ export default function AboutSection({ aboutData }: AboutSectionProps) {
     <section id="about" className="bg-white overflow-hidden w-full">
       <div className="grid w-full grid-cols-1 items-stretch lg:grid-cols-2">
         
-        {/* Left image column: complete seamless dark grey background displaying thali without clipping */}
-        <div className="relative h-[380px] w-full min-h-[313px] overflow-hidden bg-[#1d1916] sm:h-[480px] lg:h-[620px] lg:min-h-0">
+        {/* Left image column: complete seamless grey background displaying thali without clipping */}
+        <div className="relative h-[380px] w-full min-h-[313px] overflow-hidden bg-[#C7C7C7] sm:h-[480px] lg:h-[620px] lg:min-h-0">
           <Image
             src="/images/migrated/thali-seamless-grey.jpg"
             alt={title}
